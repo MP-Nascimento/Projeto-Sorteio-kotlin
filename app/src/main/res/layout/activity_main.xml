@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/txt_enunciado"
+    <EditText
+        android:id="@+id/ext_enunciado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="204dp"
-        android:text="@string/escolha_um_numero_de_0_a_10"
+        android:hint="@string/escolha_um_numero_de_0_a_10"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btn_Rodar"
         android:layout_width="wrap_content"
@@ -24,7 +25,7 @@
         android:text="@string/rodar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_enunciado"
+        app:layout_constraintTop_toBottomOf="@+id/ext_enunciado"
         />
     <TextView
         android:id="@+id/txt_sorteio"
@@ -35,6 +36,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Rodar"
+        />
+    <TextView
+        android:id="@+id/txt_msg_sorteio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_sorteio"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

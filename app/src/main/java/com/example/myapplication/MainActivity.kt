@@ -2,9 +2,12 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputFilter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
-import java.util.*
+import kotlin.random.Random
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,11 +17,21 @@ class MainActivity : AppCompatActivity() {
 
         val btnRodarNumero = findViewById<Button>(R.id.btn_Rodar)
 
-        btnRodarNumero.setOnClickListener{
+        btnRodarNumero.setOnClickListener {
+            val numero = findViewById<EditText>(R.id.ext_enunciado.toString().toInt())
             val texto = findViewById<TextView>(R.id.txt_sorteio)
-            val numeroSorteado = Random().nextInt(11)
+            val numeroSorteado = Random.nextInt(11)
+            val menssagemSorteio = findViewById<TextView>(R.id.txt_msg_sorteio)
 
-            "Numero sorteado é: $numeroSorteado".also { texto.text = it }
+            numero.filters = arrayOf<InputFilter>(MinMaxFilter(0, 10))
+            "Numero Sorteado : $numeroSorteado ".also { texto.text = it }
+            if(numero.equals(numeroSorteado)){
+               menssagemSorteio.setText("Parabens o numero sorteado bateu com o seu")
+
+            }
+            menssagemSorteio.setText("Deu ruim")
+
+
         }
     }
 }
