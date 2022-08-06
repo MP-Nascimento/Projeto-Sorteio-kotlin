@@ -13,21 +13,26 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val numero = findViewById<EditText>(R.id.ext_enunciado)
+        numero.filters = arrayOf<InputFilter>(MinMaxFilter(0, 10))
 // Codigo Feito para gerar um numero aleatorio na tela com a library Random do Java
 
         val btnRodarNumero = findViewById<Button>(R.id.btn_Rodar)
 
         btnRodarNumero.setOnClickListener {
-            val numero = findViewById<EditText>(R.id.ext_enunciado.toString().toInt())
             val texto = findViewById<TextView>(R.id.txt_sorteio)
             val numeroSorteado = Random.nextInt(11)
             val menssagemSorteio = findViewById<TextView>(R.id.txt_msg_sorteio)
+            val numeroComparacao = numero.text.toString()
 
-            numero.filters = arrayOf<InputFilter>(MinMaxFilter(0, 10))
+
+
             "Numero Sorteado : $numeroSorteado ".also { texto.text = it }
-            if(numero.equals(numeroSorteado)){
+
+            if(numeroComparacao == numeroSorteado.toString()){
                 "Parabens o numero sorteado bateu com o seu".also { menssagemSorteio.text = it }
             }
+            else
             "Poxa não foi dessa vez, mas não desista tente novamente".also { menssagemSorteio.text = it }
 
 
