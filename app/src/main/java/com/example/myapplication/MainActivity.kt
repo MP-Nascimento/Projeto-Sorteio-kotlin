@@ -26,10 +26,9 @@ class MainActivity : AppCompatActivity() {
             numero.filters = arrayOf<InputFilter>(MinMaxFilter(0, 10))
             "Numero Sorteado : $numeroSorteado ".also { texto.text = it }
             if(numero.equals(numeroSorteado)){
-               menssagemSorteio.setText("Parabens o numero sorteado bateu com o seu")
-
+                "Parabens o numero sorteado bateu com o seu".also { menssagemSorteio.text = it }
             }
-            menssagemSorteio.setText("Deu ruim")
+            "Poxa não foi dessa vez, mas não desista tente novamente".also { menssagemSorteio.text = it }
 
 
         }
