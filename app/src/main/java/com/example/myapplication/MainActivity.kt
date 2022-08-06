@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+// Codigo Feito para gerar um numero aleatorio na tela com a library Random do Java
+
         val btnRodarNumero = findViewById<Button>(R.id.btn_Rodar)
 
         btnRodarNumero.setOnClickListener{
