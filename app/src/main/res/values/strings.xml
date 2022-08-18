@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Roleta da sorte</string>
     <string name="escolha_um_numero_de_0_a_10">Escolha um numero de 0 a 10</string>
     <string name="rodar">Rodar</string>
     <string name="nenhum_numero_selecionado">Nenhum numero selecionado</string>
